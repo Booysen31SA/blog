@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Task;
+use App\Http\Controllers\TasksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasks', function () {
+// add controllers
+Route::get('/tasks', [TasksController::class, 'index']);
+Route::get('/tasks/{task}', [TasksController::class, 'showTask']);
 
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/tasks/{task}', function($id) {
-
-    $task = Task::find($id);
-
-    return view('tasks.show', compact('task'));
-});
 
 
