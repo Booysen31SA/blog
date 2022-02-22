@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TasksController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +14,19 @@ use App\Http\Controllers\TasksController;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    return view('welcome');
-});
+//     return view('welcome');
+// });
 
-// add controllers
-Route::get('/tasks', [TasksController::class, 'index']);
-Route::get('/tasks/{task}', [TasksController::class, 'showTask']);
+// // add controllers
+// Route::get('/tasks', [TasksController::class, 'index']);
+// Route::get('/tasks/{task}', [TasksController::class, 'showTask']);
 
+// Part 10 - layouts and structure
+
+
+Route::get('/', [PostController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
 
 

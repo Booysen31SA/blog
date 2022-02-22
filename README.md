@@ -70,3 +70,10 @@ git add -A
 git commit -m 'Added my project'
 git remote add origin https://github.com/Booysen31SA/blog.git
 git push -u -f origin master
+
+## commands
+# make model, controller and migration
+- php artisan make:model Post -mc
+
+# migrate database
+- php artisan migrate
